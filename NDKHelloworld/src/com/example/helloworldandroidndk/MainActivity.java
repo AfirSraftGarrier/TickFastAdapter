@@ -12,7 +12,7 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		// helloLog("This will log to LogCat via the native call.");
 		System.out.println(stringTestNdk());
-		System.out.println("XXXX");
+		// System.out.println("XXXX");
 	}
 
 	@Override
