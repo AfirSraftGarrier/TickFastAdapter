@@ -1,0 +1,3 @@
+[submodule "NDK_Callback"]
+	path = NDK_Callback
+	url = https://github.com/han1202012/NDK_Callback
