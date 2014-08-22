@@ -82,18 +82,6 @@ public abstract class ACCBaseAdapter<T> extends BaseAdapter {
 		if (convertView == null) {
 			LayoutInflater mlnflater = LayoutInflater.from(context);
 			convertView = mlnflater.inflate(this.itemLayoutId, null);
-			convertView.setOnClickListener(new OnClickListener() {
-
-				@Override
-				public void onClick(View v) {
-					if (ACCBaseAdapter.this.onItemClickListener != null
-							&& !ListUtil.isEmpty(values)) {
-						ACCBaseAdapter.this.onItemClickListener
-								.onItemClick(ACCBaseAdapter.this.values
-										.get(position));
-					}
-				}
-			});
 			convertView.setOnTouchListener(new OnTouchListener() {
 				@Override
 				public boolean onTouch(View view, MotionEvent event) {
@@ -106,7 +94,21 @@ public abstract class ACCBaseAdapter<T> extends BaseAdapter {
 					return false;
 				}
 			});
+			convertView.setOnClickListener(new OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+					if (ACCBaseAdapter.this.onItemClickListener != null
+							&& !ListUtil.isEmpty(values)) {
+						ACCBaseAdapter.this.onItemClickListener
+								.onItemClick(ACCBaseAdapter.this.values
+										.get((Integer) v
+												.getTag(R.id.tag_adapter_key)));
+					}
+				}
+			});
 		}
+		convertView.setTag(R.id.tag_adapter_key, position);
 		this.updateView(convertView, this.getItem(position));
 		return convertView;
 	}

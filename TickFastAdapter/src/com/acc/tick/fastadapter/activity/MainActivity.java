@@ -25,14 +25,18 @@ public class MainActivity extends Activity {
 
 	private List<Company> getCompanies() {
 		List<Company> companies = new ArrayList<Company>();
-		Company company = new Company();
-		company.setName("百度");
-		company.setCompanyType(CompanyType.NET);
-		companies.add(company);
-		Company secondCompany = new Company();
-		secondCompany.setName("谷歌");
-		secondCompany.setCompanyType(CompanyType.MANU);
-		companies.add(secondCompany);
+
+		for (int i = 0; i < 7; i++) {
+			Company baiduCompany = new Company();
+			baiduCompany.setName("百度" + i);
+			baiduCompany.setCompanyType(CompanyType.NET);
+			companies.add(baiduCompany);
+			Company googleCompany = new Company();
+			googleCompany.setName("谷歌" + i);
+			googleCompany.setCompanyType(CompanyType.MANU);
+			companies.add(googleCompany);
+		}
+
 		return companies;
 	}
 
