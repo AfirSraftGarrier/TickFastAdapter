@@ -5,10 +5,8 @@ import java.util.List;
 import android.content.Context;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
@@ -82,18 +80,6 @@ public abstract class ACCBaseAdapter<T> extends BaseAdapter {
 		if (convertView == null) {
 			LayoutInflater mlnflater = LayoutInflater.from(context);
 			convertView = mlnflater.inflate(this.itemLayoutId, null);
-			convertView.setOnTouchListener(new OnTouchListener() {
-				@Override
-				public boolean onTouch(View view, MotionEvent event) {
-					if (event.getAction() == MotionEvent.ACTION_UP
-							|| event.getAction() == MotionEvent.ACTION_CANCEL) {
-						view.setBackgroundDrawable(null);
-					} else {
-						view.setBackgroundResource(ACCBaseAdapter.this.defaultTouchColor);
-					}
-					return false;
-				}
-			});
 			convertView.setOnClickListener(new OnClickListener() {
 
 				@Override
