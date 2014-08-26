@@ -16,8 +16,7 @@ public class TickFastAdapter extends ACCBaseAdapter<Company> {
 
 	public TickFastAdapter(Context context, List<Company> ts,
 			ACCBaseAdapter.OnItemClickListener<Company> onItemClickListener) {
-		super(context, ts, onItemClickListener, R.layout.list_item_company,
-				null);
+		super(context, ts, onItemClickListener, R.layout.list_item_company);
 	}
 
 	@Override

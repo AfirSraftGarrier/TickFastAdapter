@@ -18,17 +18,13 @@ public abstract class ACCBaseAdapter<T> extends BaseAdapter {
 	private final List<T> values;
 	private final OnItemClickListener<T> onItemClickListener;
 	private final int itemLayoutId;
-	protected int defaultTouchColor;
 
 	public ACCBaseAdapter(Context context, List<T> ts,
-			OnItemClickListener<T> onItemClickListener, Integer itemLayoutId,
-			Integer defaultTouchColor) {
+			OnItemClickListener<T> onItemClickListener, Integer itemLayoutId) {
 		this.context = context;
 		this.values = ts;
 		this.onItemClickListener = onItemClickListener;
 		this.itemLayoutId = itemLayoutId;
-		this.defaultTouchColor = defaultTouchColor == null ? R.color.gray
-				: defaultTouchColor;
 	}
 
 	@Override
